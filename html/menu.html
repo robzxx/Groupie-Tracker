@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groupie Tracker</title>
+    <link rel="stylesheet" href="/assets/css/styleHOME.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/gt.png">
+    </head>
+    <style>
+
+         body {
+            background-image: url("https://cdn.discordapp.com/attachments/884550283819118602/958633509164032020/bg.png")
+        }
+ 
+         a { 
+             text-decoration: none;
+         }
+ 
+         .form {
+             justify-content: center;
+             display: flex;
+             background: transparent;
+             opacity: 1;
+   
+           }
+         
+         .header_white { 
+             color: white;
+             height: 80px;
+             width: 120px;
+         }
+ 
+        .navbar {
+          width: 85%;
+          margin: auto;
+          padding: 35px 0;
+          display:  flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        /*---------------------------------------
+              NAVBAR CONTENT              
+          ----------------------------------------*/
+        .logo {
+          width:40px;
+          cursor: pointer;
+        }
+
+        .navbar ul li {
+          list-style: none;
+          display: inline-block;
+          margin: 0 20px;
+          position: relative
+        }
+
+        .navbar ul li a {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        }
+
+        .navbar ul li::after {
+          content: '';
+          height: 3px;
+          width: 0;
+          background: yellow;
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          transition: 0.5s;
+          }
+
+          
+        .navbar ul li:hover::after {
+          width: 100%;
+        } 
+
+        article form{
+            width: 240px;
+            height: 240px;
+            width: 20%;
+
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+            margin-bottom: 2em;
+            float: left;
+        }
+
+        article{
+          margin-top: 10%;
+          clear: both;
+        }
+
+        img{
+          border-radius: 15%;
+        }
+    </style>
+
+<body>
+
+<!--NAV BAR-->
+  <div class="navbar">
+      <img src="https://cdn.discordapp.com/attachments/884550283819118602/958633508287422494/GTlogo.png" class="logo">
+      <ul>
+        <li>
+        
+      <form method="post" > <input type="text" role="search" size="28" placeholder="Search an artist" list="Name" name="Scan_input" /> 
+          <datalist id="Name">
+            {{range .}}
+            <option value="{{.Name}}"></option>
+            {{end}}
+          </datalist>
+          
+    </form>
+    
+        </li>
+
+        <li><a href="index.html"> HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li>
+          <div class="button" id="button">
+            <div class="icon"> </div>
+            <div class="emoji-overlay"></div>
+          </div>
+        </li>
+      </ul>
+  </div>
+</div>
+<!--FIN NAV BAR-->
+
+
+<!--ARTICLES-->
+  <article>
+    {{range .}}
+        <form action="submit" method="post" >
+            <a href="artists/{{.Id}}" class="image">
+                <img src="{{.Image}}" alt="">
+            </a>
+        </form>
+    {{end}}
+  </article>
+
+<!--FIN ARTICLES-->
+
+</body>

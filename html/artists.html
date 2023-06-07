@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTISTS</title>
+    <link rel="stylesheet" href="/assets/css/styleARTISTSPAGE.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+    <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://cdn.discordapp.com/attachments/884550283819118602/958633569356484658/GTlogoyellow.png">
+</head>
+<style>
+    body {
+        overflow-y: hidden;
+        overflow-x: hidden;
+        /* background-color: black */
+        background-image: url("https://cdn.discordapp.com/attachments/884550283819118602/958633509164032020/bg.png")
+    }
+
+
+    /*---------------------------------------
+                    CONTAINER            
+         ----------------------------------------*/
+
+
+    .hero {
+        background-color: rgba(255, 255, 255, 0.129);
+        height: 600px;
+        width: 800px;
+        display: block;
+        margin-top: 50px;
+        margin-bottom: auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 30px;
+    }
+
+    /*---------------------------------------
+                     BTN ENTER 1 PAGE             
+           ----------------------------------------*/
+    button.btn {
+        justify-content: center;
+        background: transparent;
+        color: #f7c72a;
+        border: 2px solid #f7c72a;
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding: 6px 25px;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin: 0 60px;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    /*---------------------------------------
+                    EFFET HOVER 1 PAGE              
+           ----------------------------------------*/
+    button.btn-1:hover {
+        background-color: #f7c72a;
+        color: black;
+        -webkit-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+        transition: all 0.4s;
+    }
+
+    .informations {
+        color: white;
+        position: relative;
+        bottom: -5em;
+        width: 20em;
+        margin-left: 45px;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+
+    .name_artist {
+        font-size: 45px;
+        text-align: center;
+        line-height: 60px;
+    }
+
+    .image_artists {
+        margin-right: 85px;
+        float: right;
+        margin-left: 25px;
+        margin-top: 55px;
+        border-radius: 30px;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="hero">
+
+                <img class="image_artists" src="{{.Image}}" alt="">
+                <div class="informations">
+                    <h1 class="name_artist">{{.Name}}</h1>
+
+
+                    <h2>Members :</h2> {{range .Members}}
+                    <ul>
+                        <li>
+                            <p>{{.}}</p>
+                        </li>
+                    </ul>
+
+
+                    {{end}}
+
+                    <h2>Creation date : {{.Creationdate}}</h2>
+
+                    <p>{{.Locations}}</p>
+                    <p>{{.Dates}}</p>
+                </div>
+
+            </div>
+            <a href="http://localhost:8080/menu.html"> <button class="btn btn-1">RETURN</button> </a>
+        </div>
+
+    </main>
+</body>

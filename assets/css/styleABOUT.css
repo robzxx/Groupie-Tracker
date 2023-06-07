@@ -1,0 +1,63 @@
+
+         body {
+          background-color: black
+         }
+
+         .text-container {
+          padding-top: 70px;
+          text-align: center;
+          font-size: 66px;
+          color: white;
+          font: size 40px;
+          font-family: roboto, arial, helvetica, sans-serif;
+         }
+ 
+         .subtitle {
+            position:fixed;
+            right: 30px;
+            height:400px;
+            width:700px;
+            font-size: 25px;
+            color: grey;
+            font-family: roboto, arial, helvetica, sans-serif;
+            margin-top: 0px;
+            line-height: 45px;
+            font-weight: 400;
+            text-transform: uppercase;
+         }
+
+         a { 
+             text-decoration: none;
+         }
+
+           button.btn {
+            position:fixed;
+            bottom: 0px;
+             justify-content: center;
+             background: transparent;
+             color: #f7c72a;
+             border: 2px solid #f7c72a;
+             font-size: 20px;
+             letter-spacing: 2px;
+             padding: 6px 25px;
+             text-transform: uppercase;
+             cursor: pointer;
+             margin: 15px 30px;
+             -webkit-transition: all 0.4s;
+             -moz-transition: all 0.4s;
+             transition: all 0.4s;
+           }
+
+           button.btn-1:hover {
+             background-color: #f7c72a;
+             color: black;
+             -webkit-transition: all 0.4s;
+             -moz-transition: all 0.4s;
+             transition: all 0.4s;
+           }
+           
+           .apilogo {
+            width: 600px;
+            padding-top: 90px;
+            padding-left: 80px;
+           }
